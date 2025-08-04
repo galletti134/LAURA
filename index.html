@@ -2,13 +2,14 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Para ela ❤️</title>
+  <title>Pedido de Namoro ❤️</title>
   <style>
     body {
       background-color: #fffaf4;
       font-family: Arial, sans-serif;
       text-align: center;
       padding: 30px;
+      overflow-x: hidden;
     }
 
     h1 {
@@ -27,6 +28,145 @@
       width: 300px;
       margin: 10px;
       border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .pedido-namoro {
+      margin-top: 40px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #d94f70;
+      animation: pulse 2s infinite;
+    }
+
+    .botoes {
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #d94f70;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #bf3d5a;
+    }
+
+    #resposta {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* Animação de corações */
+    .heart {
+      position: fixed;
+      font-size: 30px;
+      color: red;
+      animation: float 3s ease-in infinite;
+      opacity: 0;
+      z-index: 999;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 700px) {
+      img {
+        width: 90%;
+      }
+
+      p {
+        padding: 0 10px;
+      }
+
+      .pedido-namoro {
+        font-size: 20px;
+      }
+
+      button {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Oii, senhora!</h1>
+  <p>
+    Não sei se palavras conseguem traduzir tudo o que você significa pra mim, mas eu preciso tentar.  
+    Eu fico muito feliz em ter vc ao meu lado e o seu abraço é o lugar onde o mundo para e tudo faz sentido.  
+    Amo estar agarrado com vc. Estar com você me mostra, todos os dias, o que é amar de verdade.  
+    <br><br>
+    Você é minha parceira, minha melhor amiga, meu amor, tudo em uma pessoa.  
+    Sou muito feliz por cada momento ao seu lado.  
+    <br><br>
+    Quero continuar construindo nossa história.  
+    <strong>EU TE AMO MUITOO</strong>
+  </p>
+
+  <img src="Imagem%20do%20WhatsApp%20de%202025-08-04%20%C3%A0(s)%2009.14.30_75f65f77.jpg" alt="Foto 1">
+  <img src="imagem%201.jpg" alt="Foto 2">
+
+  <div class="pedido-namoro">
+    💍 Quer namorar comigo?
+    <div class="botoes">
+      <button onclick="responder(true)">Sim! ❤️</button>
+      <button onclick="responder(false)">Não 😢</button>
+    </div>
+    <div id="resposta"></div>
+  </div>
+
+  <script>
+    function responder(sim) {
+      const resposta = document.getElementById("resposta");
+      if (sim) {
+        resposta.innerHTML = "Você me fez a pessoa mais feliz do mundo! 💖 Te amo demais!";
+        criarCoracoes();
+      } else {
+        resposta.innerHTML = "😭 Que triste... mas tudo bem, vou continuar te amando mesmo assim.";
+      }
+    }
+
+    function criarCoracoes() {
+      for (let i = 0; i < 30; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.fontSize = Math.random() * 20 + 20 + 'px';
+        heart.innerText = '❤️';
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 3000);
+      }
+    }
+  </script>
+</body>
+</html>
+
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
